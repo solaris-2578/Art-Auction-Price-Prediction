@@ -33,7 +33,7 @@ daS <- daS %>%
 
 # Drop cols
 daS <-
-  select (daS,-c(edition, foundry, online_dummy, category)) # 2922   13
+  select (daS, -c(edition, foundry, online_dummy, category)) # 2922   13
 
 # Rename & Convert
 as.numeric.factor <- function(x) {
@@ -87,7 +87,7 @@ daC <- daC %>%
 # Add/Drop cols
 daC$sold_dummy <- as.numeric(!is.na(daC$Sales_Price_Dollar))
 daC$auction_location <- "Christie_HK"
-daC <- select (daC,-c(Edition, Foundry, Medium_Clean))
+daC <- select (daC, -c(Edition, Foundry, Medium_Clean))
 
 # Reorder & Rename & Convert
 daC <- daC %>%
@@ -117,7 +117,11 @@ mydata <- mydata %>%
   relocate(surface, .after = width)
 
 dim(mydata)
-tail(mydata)
+head(mydata)
 str(mydata)
 
-write.csv(mydata ,"Auction_HK_2016-2020.csv")
+write.csv(mydata , file = "G:/Duke/MIDS_F20/IDS702/Final Project/final-project-solaris-2578/Data/02_CleanData/Auction_HK_2016-2020.csv", row.names = FALSE)
+
+# mydata <- mydata %>%
+#   mutate(auction_date = as.Date(auction_date, format="%m/%d/%Y")) %>%
+#   arrange(desc(auction_date))

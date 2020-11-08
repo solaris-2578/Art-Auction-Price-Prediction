@@ -1,0 +1,2 @@
+height, width -- cm
+sales_dollar, low_estimate, high_estimate -- dollar
