@@ -1,0 +1,26 @@
+Provider: Silverchair
+Database: Oxford University Press
+Content: text/plain; charset="UTF-8"
+
+TY  - JOUR
+AU  - Korteweg, Arthur
+AU  - Kräussl, Roman
+AU  - Verwijmeren, Patrick
+T1  - Does it Pay to Invest in Art? A Selection-Corrected Returns Perspective
+PY  - 2016
+Y1  - 2016/04/01
+DO  - 10.1093/rfs/hhv062
+JO  - The Review of Financial Studies
+JA  - Rev Financ Stud
+VL  - 29
+IS  - 4
+SP  - 1007
+EP  - 1038
+SN  - 0893-9454
+AB  - This paper shows the importance of correcting for sample selection when investing in illiquid assets that trade endogenously. Using a sample of 32,928 paintings that sold repeatedly between 1960 and 2013, we find an asymmetric V-shaped relation between sale probabilities and returns. Adjusting for the resulting selection bias reduces average annual index returns from 8.7% to 6.3%, lowers Sharpe ratios from 0.27 to 0.11, and materially impacts portfolio allocations. Investing in a broad portfolio of paintings is not attractive, but targeting specific styles or top-selling artists may add value. The methodology naturally extends to other asset classes.Received October 18, 2013; accepted August 4, 2015 by Editor Andrew Karolyi.
+Y2  - 11/8/2020
+UR  - https://doi.org/10.1093/rfs/hhv062
+ER  - 
+
+
+
