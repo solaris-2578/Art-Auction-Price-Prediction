@@ -1,2 +1,5 @@
 height, width -- cm
 sales_dollar, low_estimate, high_estimate -- dollar
+
+
+aunction-date: only keep start date of a period

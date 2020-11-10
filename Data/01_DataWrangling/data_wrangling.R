@@ -5,6 +5,7 @@ setwd(
 
 library(dplyr)
 library(tidyr)
+library(lubridate, warn.conflicts = FALSE)
 
 #################### Sotheby's #############################
 daS <-
@@ -13,6 +14,14 @@ daS <-
     header = T,
     na.strings = c("", "Unavailable", "[not communicated]")
   )
+
+# Format date
+daS <- daS %>%
+  separate(auction_date, c("auction_date", NA), "-")
+daS$auction_date <-
+  as.factor(parse_date_time(daS$auction_date, c("mdy", "Ymd")))
+# levels(daS$auction_date)
+# str(daS$auction_date)
 
 # Filter rows
 daS <- filter(daS, category == "Paintings") %>%
@@ -33,7 +42,7 @@ daS <- daS %>%
 
 # Drop cols
 daS <-
-  select (daS, -c(edition, foundry, online_dummy, category)) # 2922   13
+  select (daS,-c(edition, foundry, online_dummy, category)) # 2922   13
 
 # Rename & Convert
 as.numeric.factor <- function(x) {
@@ -87,7 +96,7 @@ daC <- daC %>%
 # Add/Drop cols
 daC$sold_dummy <- as.numeric(!is.na(daC$Sales_Price_Dollar))
 daC$auction_location <- "Christie_HK"
-daC <- select (daC, -c(Edition, Foundry, Medium_Clean))
+daC <- select (daC,-c(Edition, Foundry, Medium_Clean))
 
 # Reorder & Rename & Convert
 daC <- daC %>%
@@ -100,6 +109,12 @@ daC$sold_dummy <- as.numeric(as.character(daC$sold_dummy))
 daC$low_estimate <- as.numeric(as.character(daC$low_estimate))
 daC$high_estimate <- as.numeric(as.character(daC$high_estimate))
 
+# Format date
+daC$auction_date <-
+  as.factor(parse_date_time(daC$auction_date, "mdY"))
+# levels(daS$auction_date)
+# str(daS$auction_date)
+
 # Display
 dim(daC) # Raw: 2508   14
 head(daC)
@@ -107,21 +122,15 @@ str(daC)
 
 #################### Merge #############################
 mydata <- bind_rows(daS, daC)
+
 mydata$auction_location <- factor(
   mydata$auction_location,
   levels = c("Sotheby_HK", "Christie_HK"),
   labels = c(0, 1)
 )
-mydata <- mydata %>%
-  mutate(surface = height * width) %>%
-  relocate(surface, .after = width)
 
 dim(mydata)
 head(mydata)
 str(mydata)
 
 write.csv(mydata , file = "G:/Duke/MIDS_F20/IDS702/Final Project/final-project-solaris-2578/Data/02_CleanData/Auction_HK_2016-2020.csv", row.names = FALSE)
-
-# mydata <- mydata %>%
-#   mutate(auction_date = as.Date(auction_date, format="%m/%d/%Y")) %>%
-#   arrange(desc(auction_date))
