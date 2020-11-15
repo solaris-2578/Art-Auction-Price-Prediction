@@ -44,7 +44,7 @@ daS <- daS %>%
 
 # Drop cols
 daS <-
-  select (daS, -c(edition, foundry, online_dummy, category)) # 2922   13
+  select (daS,-c(edition, foundry, online_dummy, category)) # 2922   13
 
 # Rename & Convert
 as.numeric.factor <- function(x) {
@@ -98,7 +98,7 @@ daC <- daC %>%
 # Add/Drop cols
 daC$sold_dummy <- as.numeric(!is.na(daC$Sales_Price_Dollar))
 daC$auction_location <- "Christie_HK"
-daC <- select (daC, -c(Edition, Foundry, Medium_Clean))
+daC <- select (daC,-c(Edition, Foundry, Medium_Clean))
 
 # Reorder & Rename & Convert
 daC <- daC %>%
@@ -152,7 +152,7 @@ mydata <- mydata %>%
   mutate(
     surface = height * width,
     sales_price_log = log(mydata$sales_price),
-    estimate_range = high_estimate - low_estimate
+    estimate_range_log = log(high_estimate - low_estimate)
   ) %>%
   select(-c(
     height,
@@ -162,10 +162,10 @@ mydata <- mydata %>%
     auction_lot,
     sold_dummy
   )) %>%
-  relocate(c(sales_price_log, estimate_range), .after = sales_price)
+  relocate(c(sales_price_log, estimate_range_log), .after = sales_price)
 
 
-mydata <- mydata[!is.na(mydata$sales_price), ]
+mydata <- mydata[!is.na(mydata$sales_price),]
 
 # signature
 mydata$artist_seal <- 0
@@ -203,7 +203,7 @@ mydata$stamped <- as.factor(mydata$stamped)
 mydata$auction_date <- as.Date(mydata$auction_date, tz = "")
 # table(mydata$auction_date)
 mydata$auction_year <- year(mydata$auction_date)
-mydata$aunction_month <- month(mydata$auction_date)
+mydata$auction_month <- month(mydata$auction_date)
 mydata$auction_weekday <- weekdays(mydata$auction_date)
 
 # medium
@@ -234,7 +234,7 @@ medium_post$oil <- as.factor(medium_post$oil)
 medium_post$acrylic <- as.factor(medium_post$acrylic)
 
 mydata <-
-  select (mydata, -c(created, signiture, medium, auction_date))
+  select (mydata,-c(created, signiture, medium, auction_date))
 
 
 mydata <- bind_cols(mydata, medium_post)
