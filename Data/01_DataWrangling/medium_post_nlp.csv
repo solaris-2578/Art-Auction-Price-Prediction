@@ -1,5 +1,5 @@
 ,x,y,z,canvas,paper,oil,acrylic
-0,Oil / Paperboard,oil  paperboard,oil  paperboard,0,1,1,0
+0,Oil / Paperboard,oil  paperboard,oil  paperboard,0,0,1,0
 1,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 2,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 3,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
@@ -173,7 +173,7 @@
 171,Acrylic / Canvas,acrylic  canvas,acrylic  canvas,1,0,0,1
 172,Acrylic / Canvas,acrylic  canvas,acrylic  canvas,1,0,0,1
 173,Acrylic / Canvas,acrylic  canvas,acrylic  canvas,1,0,0,1
-174,Enamel / Paperboard,enamel  paperboard,enamel  paperboard,0,1,0,0
+174,Enamel / Paperboard,enamel  paperboard,enamel  paperboard,0,0,0,0
 175,Acrylic / Paper,acrylic  paper,acrylic  paper,0,1,0,1
 176,Acrylic / Paper,acrylic  paper,acrylic  paper,0,1,0,1
 177,Acrylic / Canvas,acrylic  canvas,acrylic  canvas,1,0,0,1
@@ -204,7 +204,7 @@
 202,"Stainless steel plate, oil paint and silver marker",stainless steel plate oil paint and silver marker,stainless steel plate oil paint  silver marker,0,0,1,0
 203,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 204,Acrylic / Canvas,acrylic  canvas,acrylic  canvas,1,0,0,1
-205,Enamel / Paperboard,enamel  paperboard,enamel  paperboard,0,1,0,0
+205,Enamel / Paperboard,enamel  paperboard,enamel  paperboard,0,0,0,0
 206,Acrylic / Canvas,acrylic  canvas,acrylic  canvas,1,0,0,1
 207,Acrylic / Canvas,acrylic  canvas,acrylic  canvas,1,0,0,1
 208,Acrylic / Paper,acrylic  paper,acrylic  paper,0,1,0,1
@@ -462,7 +462,7 @@
 460,Lacquer / Wood,lacquer  wood,lacquer  wood,0,0,0,0
 461,Lacquer / Panel,lacquer  panel,lacquer  panel,0,0,0,0
 462,Lacquer / Wood,lacquer  wood,lacquer  wood,0,0,0,0
-463,Acrylic on newspaper,acrylic on newspaper,acrylic  newspaper,0,1,0,1
+463,Acrylic on newspaper,acrylic on newspaper,acrylic  newspaper,0,0,0,1
 464,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 465,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 466,Oil on silk laid on board,oil on silk laid on board,oil  silk laid  board,0,0,1,0
@@ -538,7 +538,7 @@
 536,Spraypaint / Cardboard,spraypaint  cardboard,spraypaint  cardboard,0,0,0,0
 537,"Stencilled spray paint, emulsion on ply board",stencilled spray paint emulsion on ply board,stencilled spray paint emulsi  ply board,0,0,0,0
 538,Spray paint / Canvas,spray paint  canvas,spray paint  canvas,1,0,0,0
-539,Acrylic and spray paint and pen / Paperboard,acrylic and spray paint and pen  paperboard,acrylic  spray paint  pen  paperboard,0,1,0,1
+539,Acrylic and spray paint and pen / Paperboard,acrylic and spray paint and pen  paperboard,acrylic  spray paint  pen  paperboard,0,0,0,1
 540,Acrylic / Canvas,acrylic  canvas,acrylic  canvas,1,0,0,1
 541,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 542,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
@@ -546,7 +546,7 @@
 544,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 545,Acrylic on paper on aluminum panel,acrylic on paper on aluminum panel,acrylic  paper  aluminum panel,0,1,0,1
 546,Acrylic / Paper,acrylic  paper,acrylic  paper,0,1,0,1
-547,Enamel / Paperboard,enamel  paperboard,enamel  paperboard,0,1,0,0
+547,Enamel / Paperboard,enamel  paperboard,enamel  paperboard,0,0,0,0
 548,Acrylic / Paper,acrylic  paper,acrylic  paper,0,1,0,1
 549,Acrylic / Canvas,acrylic  canvas,acrylic  canvas,1,0,0,1
 550,Acrylic / Canvas,acrylic  canvas,acrylic  canvas,1,0,0,1
@@ -592,7 +592,7 @@
 590,Acrylic / Canvas,acrylic  canvas,acrylic  canvas,1,0,0,1
 591,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 592,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
-593,Gouache and enamel / Paperboard,gouache and enamel  paperboard,gouache  enamel  paperboard,0,1,0,0
+593,Gouache and enamel / Paperboard,gouache and enamel  paperboard,gouache  enamel  paperboard,0,0,0,0
 594,Acrylic / Paper,acrylic  paper,acrylic  paper,0,1,0,1
 595,Acrylic / Paper,acrylic  paper,acrylic  paper,0,1,0,1
 596,Acrylic / Paper,acrylic  paper,acrylic  paper,0,1,0,1
@@ -628,7 +628,7 @@
 626,Acrylic / Canvas,acrylic  canvas,acrylic  canvas,1,0,0,1
 627,Acrylic / Canvas,acrylic  canvas,acrylic  canvas,1,0,0,1
 628,Acrylic / Canvas,acrylic  canvas,acrylic  canvas,1,0,0,1
-629,Enamel / Paperboard,enamel  paperboard,enamel  paperboard,0,1,0,0
+629,Enamel / Paperboard,enamel  paperboard,enamel  paperboard,0,0,0,0
 630,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 631,Acrylic / Canvas,acrylic  canvas,acrylic  canvas,1,0,0,1
 632,Acrylic / Board,acrylic  board,acrylic  board,0,0,0,1
@@ -849,7 +849,7 @@
 847,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 848,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 849,Oil / Board,oil  board,oil  board,0,0,1,0
-850,Oil / Paperboard,oil  paperboard,oil  paperboard,0,1,1,0
+850,Oil / Paperboard,oil  paperboard,oil  paperboard,0,0,1,0
 851,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 852,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 853,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
@@ -876,7 +876,7 @@
 874,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 875,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 876,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
-877,Oil / Paperboard,oil  paperboard,oil  paperboard,0,1,1,0
+877,Oil / Paperboard,oil  paperboard,oil  paperboard,0,0,1,0
 878,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 879,Oil / Board,oil  board,oil  board,0,0,1,0
 880,Acrylic and ink / Canvas,acrylic and ink  canvas,acrylic  ink  canvas,1,0,0,1
@@ -931,7 +931,7 @@
 929,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 930,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 931,Acrylic on cotton mounted on FRP,acrylic on cotton mounted on frp,acrylic  cott mounted  frp,0,0,0,1
-932,Enamel / Paperboard,enamel  paperboard,enamel  paperboard,0,1,0,0
+932,Enamel / Paperboard,enamel  paperboard,enamel  paperboard,0,0,0,0
 933,Acrylic / Canvas,acrylic  canvas,acrylic  canvas,1,0,0,1
 934,Acrylic / Canvas,acrylic  canvas,acrylic  canvas,1,0,0,1
 935,Acrylic / Canvas,acrylic  canvas,acrylic  canvas,1,0,0,1
@@ -1316,7 +1316,7 @@
 1314,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 1315,Acrylic / Canvas,acrylic  canvas,acrylic  canvas,1,0,0,1
 1316,Acrylic / Canvas,acrylic  canvas,acrylic  canvas,1,0,0,1
-1317,Acrylic / Paperboard,acrylic  paperboard,acrylic  paperboard,0,1,0,1
+1317,Acrylic / Paperboard,acrylic  paperboard,acrylic  paperboard,0,0,0,1
 1318,Acrylic / Canvas,acrylic  canvas,acrylic  canvas,1,0,0,1
 1319,Acrylic / Canvas,acrylic  canvas,acrylic  canvas,1,0,0,1
 1320,Acrylic / Canvas,acrylic  canvas,acrylic  canvas,1,0,0,1
@@ -2171,7 +2171,7 @@
 2169,Oil / Masonite,oil  masonite,oil  masite,0,0,1,0
 2170,Oil / Masonite,oil  masonite,oil  masite,0,0,1,0
 2171,Oil / Masonite,oil  masonite,oil  masite,0,0,1,0
-2172,Gouache and enamel / Paperboard,gouache and enamel  paperboard,gouache  enamel  paperboard,0,1,0,0
+2172,Gouache and enamel / Paperboard,gouache and enamel  paperboard,gouache  enamel  paperboard,0,0,0,0
 2173,Acrylic / Paper,acrylic  paper,acrylic  paper,0,1,0,1
 2174,Oil on hemp cloth,oil on hemp cloth,oil  hemp cloth,0,0,1,0
 2175,Oil on hemp cloth,oil on hemp cloth,oil  hemp cloth,0,0,1,0
@@ -2343,7 +2343,7 @@
 2341,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 2342,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 2343,Oil and burlap / Canvas on board,oil and burlap  canvas on board,oil  burlap  canvas  board,1,0,1,0
-2344,Enamel and ink / Paperboard,enamel and ink  paperboard,enamel  ink  paperboard,0,1,0,0
+2344,Enamel and ink / Paperboard,enamel and ink  paperboard,enamel  ink  paperboard,0,0,0,0
 2345,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 2346,Acrylic / Paper,acrylic  paper,acrylic  paper,0,1,0,1
 2347,Acrylic / Paper,acrylic  paper,acrylic  paper,0,1,0,1
@@ -2364,11 +2364,11 @@
 2362,Acrylic / Canvas,acrylic  canvas,acrylic  canvas,1,0,0,1
 2363,Oil / Wood,oil  wood,oil  wood,0,0,1,0
 2364,Acrylic and ink / Canvas on board,acrylic and ink  canvas on board,acrylic  ink  canvas  board,1,0,0,1
-2365,Enamel / Paperboard,enamel  paperboard,enamel  paperboard,0,1,0,0
+2365,Enamel / Paperboard,enamel  paperboard,enamel  paperboard,0,0,0,0
 2366,Acrylicoil and marker on paper mounted on paper,acrylicoil and marker on paper mounted on paper,acrylicoil  marker  paper mounted  paper,0,1,1,1
 2367,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 2368,Acrylic / Cardboard,acrylic  cardboard,acrylic  cardboard,0,0,0,1
-2369,Enamel / Paperboard,enamel  paperboard,enamel  paperboard,0,1,0,0
+2369,Enamel / Paperboard,enamel  paperboard,enamel  paperboard,0,0,0,0
 2370,Acrylic / Canvas,acrylic  canvas,acrylic  canvas,1,0,0,1
 2371,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 2372,Acrylic / Canvas,acrylic  canvas,acrylic  canvas,1,0,0,1
@@ -2798,7 +2798,7 @@
 2796,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 2797,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 2798,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
-2799,Oil on newspaper,oil on newspaper,oil  newspaper,0,1,1,0
+2799,Oil on newspaper,oil on newspaper,oil  newspaper,0,0,1,0
 2800,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 2801,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 2802,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
@@ -2844,7 +2844,7 @@
 2842,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 2843,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 2844,Oil / Masonite,oil  masonite,oil  masite,0,0,1,0
-2845,"Oil on canvas, mounted on paperboard",oil on canvas mounted on paperboard,oil  canvas mounted  paperboard,1,1,1,0
+2845,"Oil on canvas, mounted on paperboard",oil on canvas mounted on paperboard,oil  canvas mounted  paperboard,1,0,1,0
 2846,Oil / Canvas on board,oil  canvas on board,oil  canvas  board,1,0,1,0
 2847,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 2848,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
@@ -2889,7 +2889,7 @@
 2887,Acrylic / Canvas,acrylic  canvas,acrylic  canvas,1,0,0,1
 2888,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 2889,Acrylic / Canvas,acrylic  canvas,acrylic  canvas,1,0,0,1
-2890,Enamel / Paperboard,enamel  paperboard,enamel  paperboard,0,1,0,0
+2890,Enamel / Paperboard,enamel  paperboard,enamel  paperboard,0,0,0,0
 2891,Acrylic / Canvas,acrylic  canvas,acrylic  canvas,1,0,0,1
 2892,Acrylic / Canvas,acrylic  canvas,acrylic  canvas,1,0,0,1
 2893,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
@@ -3133,7 +3133,7 @@
 3131,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 3132,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 3133,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
-3134,Oil on paperboard on board,oil on paperboard on board,oil  paperboard  board,0,1,1,0
+3134,Oil on paperboard on board,oil on paperboard on board,oil  paperboard  board,0,0,1,0
 3135,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 3136,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 3137,Ink and acrylic / Linen,ink and acrylic  linen,ink  acrylic  linen,0,0,0,1
@@ -3160,7 +3160,7 @@
 3158,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 3159,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 3160,Acrylic / Canvas,acrylic  canvas,acrylic  canvas,1,0,0,1
-3161,"Acrylic , watercolour and ink / Paperboard",acrylic  watercolour and ink  paperboard,acrylic  watercolour  ink  paperboard,0,1,0,1
+3161,"Acrylic , watercolour and ink / Paperboard",acrylic  watercolour and ink  paperboard,acrylic  watercolour  ink  paperboard,0,0,0,1
 3162,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 3163,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 3164,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
@@ -3181,7 +3181,7 @@
 3179,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 3180,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 3181,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
-3182,Oil / Paperboard,oil  paperboard,oil  paperboard,0,1,1,0
+3182,Oil / Paperboard,oil  paperboard,oil  paperboard,0,0,1,0
 3183,Oil / Panel,oil  panel,oil  panel,0,0,1,0
 3184,Acrylic and pastel / Paper,acrylic and pastel  paper,acrylic  pastel  paper,0,1,0,1
 3185,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
@@ -3405,7 +3405,7 @@
 3403,Ink and acrylic / Paper,ink and acrylic  paper,ink  acrylic  paper,0,1,0,1
 3404,Ink and acrylic / Canvas,ink and acrylic  canvas,ink  acrylic  canvas,1,0,0,1
 3405,Oil / Masonite,oil  masonite,oil  masite,0,0,1,0
-3406,Pastel / Paperboard,pastel  paperboard,pastel  paperboard,0,1,0,0
+3406,Pastel / Paperboard,pastel  paperboard,pastel  paperboard,0,0,0,0
 3407,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 3408,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0
 3409,Oil / Canvas,oil  canvas,oil  canvas,1,0,1,0

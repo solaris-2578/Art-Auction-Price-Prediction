@@ -1,14 +1,14 @@
 rm(list = ls())
-setwd('G:/Duke/MIDS_F20/IDS702/Final Project/final-project-solaris-2578')
 
 library(tidyverse)
 library(ggcorrplot)
 library(rms) #for VIF
 library(MASS)
+library(sjPlot)
 
 # Load data
 mydata <-
-  read.csv('./Data/02_CleanData/Auction_HK_2016-2020.csv', header = T)
+  read.csv("G:/Duke/MIDS_F20/IDS702/Final Project/final-project-solaris-2578/Data/02_CleanData/Auction_HK_2016-2020.csv", header = T)
 
 # Exclude NAs rows
 mydata <- mydata[complete.cases(mydata),]
@@ -93,12 +93,12 @@ summary(M2)
 
 M3 <- lm(
   sales_price_log ~
-    artist_seal + signed + auction_month + auction_year + estimate_range_log_c +
+    auction_location + artist_seal + signed + auction_month + auction_year + estimate_range_log_c +
     canvas * (oil + acrylic),
   data = mydata
 )
 summary(M3) # good
-
+tab_model(M3)
 M4 <- lm(
   sales_price_log ~
     artist_seal + auction_month + auction_year + estimate_range_log_c +

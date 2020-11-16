@@ -3,11 +3,8 @@ setwd(
   'G:/Duke/MIDS_F20/IDS702/Final Project/final-project-solaris-2578/Data/01_DataWrangling'
 )
 
-library(dplyr)
-library(tidyr)
 library(tidyverse)
 library(lubridate)
-library(stringr)
 
 #################### Sotheby's #############################
 daS <-
@@ -17,7 +14,7 @@ daS <-
     na.strings = c("", "Unavailable", "[not communicated]")
   )
 
-# Format date
+# Format date: Only keep starting date
 daS <- daS %>%
   separate(auction_date, c("auction_date", NA), "-")
 daS$auction_date <-
@@ -36,15 +33,9 @@ daS <- daS %>%
           "([\\d.]+)[^\\d.]+([\\d.]+)",
           convert = TRUE)
 
-# daS <- daS %>%
-#   separate(Medium,
-#            c("A", "B"),
-#            "/") %>%
-#   mutate(across(c("A", "B"), as.factor))
-
 # Drop cols
 daS <-
-  select (daS,-c(edition, foundry, online_dummy, category)) # 2922   13
+  select (daS,-c(edition, foundry, online_dummy, category)) 
 
 # Rename & Convert
 as.numeric.factor <- function(x) {
@@ -164,7 +155,7 @@ mydata <- mydata %>%
   )) %>%
   relocate(c(sales_price_log, estimate_range_log), .after = sales_price)
 
-
+# without imputation
 mydata <- mydata[!is.na(mydata$sales_price),]
 
 # signature
@@ -215,17 +206,17 @@ medium_post <-
     header = T
   )
 
-# medium_post$substrate <- 0 #otherwise
-# medium_post$substrate[medium_post$paper == 1] <- 2 #paper
-# medium_post$substrate[medium_post$canvas == 1] <- 1 #canvas
-# medium_post$substrate <- as.factor(medium_post$substrate)
-# # table(medium_post$substrate)
-#
-# medium_post$medium <- 0 #otherwise
-# medium_post$medium[medium_post$acrylic == 1] <- 2 #acrylic
-# medium_post$medium[medium_post$oil == 1] <- 1 #oil
-# medium_post$medium <- as.factor(medium_post$medium)
-# # table(medium_post$medium)
+medium_post$substrate <- 0 #otherwise
+medium_post$substrate[medium_post$paper == 1] <- 2 #paper
+medium_post$substrate[medium_post$canvas == 1] <- 1 #canvas
+medium_post$substrate <- as.factor(medium_post$substrate)
+# table(medium_post$substrate)
+
+medium_post$medium <- 0 #otherwise
+medium_post$medium[medium_post$acrylic == 1] <- 2 #acrylic
+medium_post$medium[medium_post$oil == 1] <- 1 #oil
+medium_post$medium <- as.factor(medium_post$medium)
+# table(medium_post$medium)
 
 medium_post <- medium_post[, c("canvas", "paper", "oil", "acrylic")]
 medium_post$canvas <- as.factor(medium_post$canvas)
