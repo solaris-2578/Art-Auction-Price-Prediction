@@ -7,10 +7,7 @@ library(viridis)
 
 # Load data
 mydata <-
-  read.csv('./Data/02_CleanData/Auction_HK_2016-2020.csv', header = T)
-
-# Exclude NAs rows
-mydata <- mydata[complete.cases(mydata),]
+  read.csv("G:/Duke/MIDS_F20/IDS702/Final Project/final-project-solaris-2578/Data/02_CleanData/Auction_HK_2016-2020.csv", header = T)
 
 mydata <- mydata %>%
   mutate(across(c("sales_price", "estimate_range_log"), as.numeric)) %>%
@@ -45,6 +42,10 @@ levels(mydata$canvas) <- c("Otherwise", "Canvas")
 levels(mydata$paper) <- c("Otherwise", "Paper")
 levels(mydata$oil) <- c("Otherwise", "Oil")
 levels(mydata$acrylic) <- c("Otherwise", "Acrylic")
+
+# Exclude NAs rows
+mydata <- mydata[complete.cases(mydata),]
+
 
 dim(mydata) #4194   20
 str(mydata)

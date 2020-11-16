@@ -206,16 +206,18 @@ medium_post <-
     header = T
   )
 
-medium_post$substrate <- 0 #otherwise
-medium_post$substrate[medium_post$paper == 1] <- 2 #paper
-medium_post$substrate[medium_post$canvas == 1] <- 1 #canvas
-medium_post$substrate <- as.factor(medium_post$substrate)
-# table(medium_post$substrate)
-
-medium_post$medium <- 0 #otherwise
-medium_post$medium[medium_post$acrylic == 1] <- 2 #acrylic
-medium_post$medium[medium_post$oil == 1] <- 1 #oil
-medium_post$medium <- as.factor(medium_post$medium)
+# medium_post$substrate <- 0 #otherwise
+# medium_post$substrate[medium_post$canvas == 1] <- 1 #canvas
+# medium_post$substrate[medium_post$paper == 1] <- 2 #paper
+# medium_post$substrate <- factor(medium_post$substrate, 
+#                                 levels = c(0,1,2),
+#                                 labels = c("Otherwise","Canvas","Paper"))
+# # table(medium_post$substrate)
+# 
+# medium_post$medium <- 0 #otherwise
+# medium_post$medium[medium_post$acrylic == 1] <- 2 #acrylic
+# medium_post$medium[medium_post$oil == 1] <- 1 #oil
+# medium_post$medium <- as.factor(medium_post$medium)
 # table(medium_post$medium)
 
 medium_post <- medium_post[, c("canvas", "paper", "oil", "acrylic")]

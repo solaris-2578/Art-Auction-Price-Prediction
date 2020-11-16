@@ -8,10 +8,10 @@ library(sjPlot)
 
 # Load data
 mydata <-
-  read.csv("G:/Duke/MIDS_F20/IDS702/Final Project/final-project-solaris-2578/Data/02_CleanData/Auction_HK_2016-2020.csv", header = T)
-
-# Exclude NAs rows
-mydata <- mydata[complete.cases(mydata),]
+  read.csv(
+    "G:/Duke/MIDS_F20/IDS702/Final Project/final-project-solaris-2578/Data/02_CleanData/Auction_HK_2016-2020.csv",
+    header = T
+  )
 
 mydata <- mydata %>%
   mutate(across(c("sales_price", "estimate_range_log"), as.numeric)) %>%
@@ -46,6 +46,9 @@ levels(mydata$canvas) <- c("Otherwise", "Canvas")
 levels(mydata$paper) <- c("Otherwise", "Paper")
 levels(mydata$oil) <- c("Otherwise", "Oil")
 levels(mydata$acrylic) <- c("Otherwise", "Acrylic")
+
+# Exclude NAs rows
+mydata <- mydata[complete.cases(mydata), ]
 
 # Mean centering
 mydata$estimate_range_log_c <-
@@ -93,12 +96,57 @@ summary(M2)
 
 M3 <- lm(
   sales_price_log ~
-    auction_location + artist_seal + signed + auction_month + auction_year + estimate_range_log_c +
+    auction_location + artist_seal + signed + 
+    auction_month + auction_weekday + auction_year + 
+    estimate_range_log_c +
     canvas * (oil + acrylic),
   data = mydata
 )
 summary(M3) # good
-tab_model(M3)
+# tab_model(M3)
+
+M3_no_year <- lm(
+  sales_price_log ~
+    auction_location + artist_seal + signed + 
+    auction_month + auction_weekday + 
+    estimate_range_log_c +
+    canvas * (oil + acrylic),
+  data = mydata
+)
+
+anova(M3_no_year, M3) # throw out year
+
+M3_no_year_weekday <- lm(
+  sales_price_log ~
+    auction_location + artist_seal + signed + 
+    auction_month + 
+    estimate_range_log_c +
+    canvas * (oil + acrylic),
+  data = mydata
+)
+anova(M3_no_year, M3_no_year_weekday) # keep weekday
+
+M3_no_year_month <- lm(
+  sales_price_log ~
+    auction_location + artist_seal + signed + 
+    auction_weekday + 
+    estimate_range_log_c +
+    canvas * (oil + acrylic),
+  data = mydata
+)
+anova(M3_no_year, M3_no_year_month) # keep month
+
+M3_no_year <- lm(
+  sales_price_log ~
+    auction_location + artist_seal + signed + 
+    auction_month + auction_weekday + 
+    estimate_range_log_c +
+    canvas * (oil + acrylic),
+  data = mydata
+)
+
+anova(M3_no_year, M3)
+
 M4 <- lm(
   sales_price_log ~
     artist_seal + auction_month + auction_year + estimate_range_log_c +
@@ -108,6 +156,7 @@ M4 <- lm(
 summary(M4)
 anova(M3, M4)
 
+
 M5 <- lm(
   sales_price_log ~
     artist_seal + auction_month + auction_year + estimate_range_log_c,
@@ -115,20 +164,21 @@ M5 <- lm(
 )
 summary(M5)
 anova(M3, M5)
+
 # Model Assessment
 ggplot(mydata, aes(x = estimate_range_log_c, y = M3$residual)) +
   geom_point(alpha = .7) +  geom_hline(yintercept = 0, col = "red3") + theme_classic() +
-  labs(title = "Residuals vs Log of Estimated Range (Centered)", 
-       x = "Log of Estimated Range (Centered)", 
+  labs(title = "Residuals vs Log of Estimated Range (Centered)",
+       x = "Log of Estimated Range (Centered)",
        y = "Residuals")
 
 ggplot(mydata, aes(x = surface_c, y = M3$residual)) +
   geom_point(alpha = .7) +  geom_hline(yintercept = 0, col = "red3") + theme_classic() +
-  labs(title = "Residuals vs Surface (Centered)", 
-       x = "Surface (Centered)", 
+  labs(title = "Residuals vs Surface (Centered)",
+       x = "Surface (Centered)",
        y = "Residuals")
 
-plot(M3,which=1:5,col=c("blue4"))
+plot(M3, which = 1:5, col = c("blue4"))
 vif(M3)
 
 ################################### Stepwise Regression ###################################
