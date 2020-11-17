@@ -10,7 +10,7 @@ mydata <-
   read.csv("G:/Duke/MIDS_F20/IDS702/Final Project/final-project-solaris-2578/Data/02_CleanData/Auction_HK_2016-2020.csv", header = T)
 
 mydata <- mydata %>%
-  mutate(across(c("sales_price", "estimate_range_log"), as.numeric)) %>%
+  mutate(across(c("sales_price", "estimate_range"), as.numeric)) %>%
   mutate(across(
     c(
       "auction_location",
@@ -79,17 +79,17 @@ ggplot(mydata, aes(x = sales_price_log)) +
 # most expensive
 # mydata[which(mydata$sales_price > 6e+07),]
 
-# Correlations: high correlation blw sales_price_log & estimate_range_log (same as EDA)
+# Correlations: high correlation blw sales_price_log & estimate_range (same as EDA)
 mydata_corr <-
-  round(cor(mydata[, c("sales_price_log", "estimate_range_log", "surface")]), 2)
+  round(cor(mydata[, c("sales_price_log", "estimate_range", "surface")]), 2)
 ggcorrplot(mydata_corr, method = "circle", type = "lower")
 
 ########################## Main Effects #######################################
 # numerical variables
-# 1. estimate_range_log
+# 1. estimate_range
 
 # ggplot(mydata,
-#        aes(x = estimate_range_log, y = sales_price_log)) +
+#        aes(x = estimate_range, y = sales_price_log)) +
 #   geom_point(alpha = .7, aes(color = oil)) +
 #   geom_smooth(aes(color = oil, fill = oil),
 #               method = "auto") +
@@ -100,7 +100,7 @@ ggcorrplot(mydata_corr, method = "circle", type = "lower")
 #   theme(legend.position = "bottom")
 
 # ggplot(mydata,
-#        aes(x = estimate_range_log, y = sales_price_log)) +
+#        aes(x = estimate_range, y = sales_price_log)) +
 #   geom_point(alpha = .7, aes(color = auction_location)) +
 #   geom_smooth(method = "auto") +
 #   scale_color_viridis(discrete = TRUE, option = "D") +
@@ -109,7 +109,7 @@ ggcorrplot(mydata_corr, method = "circle", type = "lower")
 #        y = "Log(Sales Price)", x = "Range of Estimation")
 
 ggplot(mydata,
-       aes(x = estimate_range_log, y = sales_price_log)) +
+       aes(x = estimate_range, y = sales_price_log)) +
   geom_point(alpha = .7, colour = "blue4") +
   geom_smooth(method = "lm", col = "red3") +
   labs(title = "Log(Sales Price) vs Range of Estimation",
@@ -198,22 +198,22 @@ ggplot(mydata,
 
 ##########################  Interaction Effects ##########################
 #============================ continuous vs factor ================================
-#vs estimate_range_log
-ggplot(mydata, aes(x = estimate_range_log, y = sales_price_log)) +
+#vs estimate_range
+ggplot(mydata, aes(x = estimate_range, y = sales_price_log)) +
   geom_point(alpha = .5, colour = "blue4") +
   geom_smooth(method = "lm", col = "red3") +
   labs(itle = "Log(Sales Price) vs Range of Estimation",
        y = "Log(Sales Price)", x = "Range of Estimation") +
   facet_wrap(~ auction_location)
 
-ggplot(mydata, aes(x = estimate_range_log, y = sales_price_log)) +
+ggplot(mydata, aes(x = estimate_range, y = sales_price_log)) +
   geom_point(alpha = .5, colour = "blue4") +
   geom_smooth(method = "lm", col = "red3") +
   labs(itle = "Log(Sales Price) vs Range of Estimation",
        y = "Log(Sales Price)", x = "Range of Estimation") +
   facet_wrap(~ auction_year)
 
-ggplot(mydata, aes(x = estimate_range_log, y = sales_price_log)) +
+ggplot(mydata, aes(x = estimate_range, y = sales_price_log)) +
   geom_point(alpha = .5, colour = "blue4") +
   geom_smooth(method = "lm", col = "red3") +
   labs(itle = "Log(Sales Price) vs Range of Estimation",
@@ -286,7 +286,7 @@ ggplot(mydata,
 
 # # location vs estimated range
 # ggplot(mydata,aes(x = auction_location,
-#                   y = estimate_range_log,
+#                   y = estimate_range,
 #                   fill=auction_location)) +
 #   geom_boxplot() + #coord_flip() +
 #   scale_fill_brewer(palette="Blues") +
@@ -296,7 +296,7 @@ ggplot(mydata,
 #   facet_wrap( ~ auction_year,ncol=5)
 #
 # ggplot(mydata,aes(x = auction_location,
-#                   y = estimate_range_log,
+#                   y = estimate_range,
 #                   fill=auction_location)) +
 #   geom_boxplot() + #coord_flip() +
 #   scale_fill_brewer(palette="Blues") +
@@ -306,7 +306,7 @@ ggplot(mydata,
 #   facet_wrap( ~ auction_weekday,nrow = 2, ncol=4)
 #
 # ggplot(mydata,aes(x = auction_location,
-#                   y = estimate_range_log,
+#                   y = estimate_range,
 #                   fill=auction_location)) +
 #   geom_boxplot() + #coord_flip() +
 #   scale_fill_brewer(palette="Blues") +

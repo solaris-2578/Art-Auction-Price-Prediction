@@ -14,7 +14,7 @@ mydata <-
   )
 
 mydata <- mydata %>%
-  mutate(across(c("sales_price", "estimate_range_log"), as.numeric)) %>%
+  mutate(across(c("sales_price", "estimate_range"), as.numeric)) %>%
   mutate(across(
     c(
       "auction_location",
@@ -48,15 +48,19 @@ levels(mydata$oil) <- c("Otherwise", "Oil")
 levels(mydata$acrylic) <- c("Otherwise", "Acrylic")
 
 # Exclude NAs rows
-mydata <- mydata[complete.cases(mydata), ]
+mydata <- mydata[complete.cases(mydata),]
 
 # Mean centering
-mydata$estimate_range_log_c <-
-  mydata$estimate_range_log - mean(mydata$estimate_range_log)
+mydata$estimate_range_c <-
+  mydata$estimate_range - mean(mydata$estimate_range)
 mydata$surface_c <- mydata$surface - mean(mydata$surface)
 
-colMeans(mydata[, c("estimate_range_log", "surface")]) # for interpretation
 
+# colMeans(mydata[, c("estimate_range", "surface")]) # for interpretation
+# 
+# covName_factor <- unlist(lapply(mydata, is.factor)) 
+# cov_factor <- mydata[,covName_factor]
+# sapply(cov_factor, table)
 # summary
 dim(mydata) #4194   22
 str(mydata)
@@ -69,7 +73,7 @@ cov_names <-
     "title",
     "sales_price",
     "sales_price_log",
-    "estimate_range_log",
+    "estimate_range",
     "surface"
   )]
 
@@ -87,7 +91,7 @@ summary(M1)
 
 M2 <- lm(
   sales_price_log ~
-    artist_seal + dated + auction_month + estimate_range_log_c +
+    artist_seal + dated + auction_month + estimate_range_c +
     canvas * (oil + acrylic) +
     auction_location * auction_year,
   data = mydata
@@ -96,9 +100,9 @@ summary(M2)
 
 M3 <- lm(
   sales_price_log ~
-    auction_location + artist_seal + signed + 
-    auction_month + auction_weekday + auction_year + 
-    estimate_range_log_c +
+    auction_location + artist_seal + signed +
+    auction_month + auction_weekday + auction_year +
+    estimate_range_c +
     canvas * (oil + acrylic),
   data = mydata
 )
@@ -107,9 +111,9 @@ summary(M3) # good
 
 M3_no_year <- lm(
   sales_price_log ~
-    auction_location + artist_seal + signed + 
-    auction_month + auction_weekday + 
-    estimate_range_log_c +
+    auction_location + artist_seal + signed +
+    auction_month + auction_weekday +
+    estimate_range_c +
     canvas * (oil + acrylic),
   data = mydata
 )
@@ -118,9 +122,9 @@ anova(M3_no_year, M3) # throw out year
 
 M3_no_year_weekday <- lm(
   sales_price_log ~
-    auction_location + artist_seal + signed + 
-    auction_month + 
-    estimate_range_log_c +
+    auction_location + artist_seal + signed +
+    auction_month +
+    estimate_range_c +
     canvas * (oil + acrylic),
   data = mydata
 )
@@ -128,9 +132,9 @@ anova(M3_no_year, M3_no_year_weekday) # keep weekday
 
 M3_no_year_month <- lm(
   sales_price_log ~
-    auction_location + artist_seal + signed + 
-    auction_weekday + 
-    estimate_range_log_c +
+    auction_location + artist_seal + signed +
+    auction_weekday +
+    estimate_range_c +
     canvas * (oil + acrylic),
   data = mydata
 )
@@ -138,9 +142,9 @@ anova(M3_no_year, M3_no_year_month) # keep month
 
 M3_no_year <- lm(
   sales_price_log ~
-    auction_location + artist_seal + signed + 
-    auction_month + auction_weekday + 
-    estimate_range_log_c +
+    auction_location + artist_seal + signed +
+    auction_month + auction_weekday +
+    estimate_range_c +
     canvas * (oil + acrylic),
   data = mydata
 )
@@ -149,7 +153,7 @@ anova(M3_no_year, M3)
 
 M4 <- lm(
   sales_price_log ~
-    artist_seal + auction_month + auction_year + estimate_range_log_c +
+    artist_seal + auction_month + auction_year + estimate_range_c +
     canvas * (oil + acrylic),
   data = mydata
 )
@@ -159,14 +163,14 @@ anova(M3, M4)
 
 M5 <- lm(
   sales_price_log ~
-    artist_seal + auction_month + auction_year + estimate_range_log_c,
+    artist_seal + auction_month + auction_year + estimate_range_c,
   data = mydata
 )
 summary(M5)
 anova(M3, M5)
 
 # Model Assessment
-ggplot(mydata, aes(x = estimate_range_log_c, y = M3$residual)) +
+ggplot(mydata, aes(x = estimate_range_c, y = M3$residual)) +
   geom_point(alpha = .7) +  geom_hline(yintercept = 0, col = "red3") + theme_classic() +
   labs(title = "Residuals vs Log of Estimated Range (Centered)",
        x = "Log of Estimated Range (Centered)",

@@ -143,7 +143,7 @@ mydata <- mydata %>%
   mutate(
     surface = height * width,
     sales_price_log = log(mydata$sales_price),
-    estimate_range_log = log(high_estimate - low_estimate)
+    estimate_range = high_estimate - low_estimate
   ) %>%
   select(-c(
     height,
@@ -153,7 +153,7 @@ mydata <- mydata %>%
     auction_lot,
     sold_dummy
   )) %>%
-  relocate(c(sales_price_log, estimate_range_log), .after = sales_price)
+  relocate(c(sales_price_log, estimate_range), .after = sales_price)
 
 # without imputation
 mydata <- mydata[!is.na(mydata$sales_price),]
