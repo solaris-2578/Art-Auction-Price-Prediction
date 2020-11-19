@@ -9,7 +9,7 @@ library(sjPlot)
 # Load data
 mydata <-
   read.csv(
-    "G:/Duke/MIDS_F20/IDS702/Final Project/final-project-solaris-2578/Data/02_CleanData/Auction_HK_2016-2020.csv",
+    "G:/Duke/MIDS_F20/IDS702/Final Project/final-project-solaris-2578/Data&Model/02_CleanData/Auction_HK_2016-2020.csv",
     header = T
   )
 

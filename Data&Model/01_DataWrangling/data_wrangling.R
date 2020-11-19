@@ -1,8 +1,5 @@
 rm(list = ls())
-setwd(
-  'G:/Duke/MIDS_F20/IDS702/Final Project/final-project-solaris-2578/Data/01_DataWrangling'
-)
-
+setwd("G:/Duke/MIDS_F20/IDS702/Final Project/final-project-solaris-2578/Data&Model/01_DataWrangling/")
 library(tidyverse)
 library(lubridate)
 
@@ -199,10 +196,10 @@ mydata$auction_weekday <- weekdays(mydata$auction_date)
 
 # medium
 medium_pre <- mydata$medium
-# write.csv(medium_pre, file = "G:/Duke/MIDS_F20/IDS702/Final Project/final-project-solaris-2578/Data/01_DataWrangling/medium_pre.csv", row.names = FALSE)
+# write.csv(medium_pre, file = "G:/Duke/MIDS_F20/IDS702/Final Project/final-project-solaris-2578/Data&Model/01_DataWrangling/medium_pre.csv", row.names = FALSE)
 medium_post <-
   read.csv(
-    "G:/Duke/MIDS_F20/IDS702/Final Project/final-project-solaris-2578/Data/01_DataWrangling/medium_post_nlp.csv",
+    "G:/Duke/MIDS_F20/IDS702/Final Project/final-project-solaris-2578/Data&Model/01_DataWrangling/medium_post_nlp.csv",
     header = T
   )
 
@@ -220,11 +217,7 @@ medium_post <-
 # medium_post$medium <- as.factor(medium_post$medium)
 # table(medium_post$medium)
 
-medium_post <- medium_post[, c("canvas", "paper", "oil", "acrylic")]
-medium_post$canvas <- as.factor(medium_post$canvas)
-medium_post$paper <- as.factor(medium_post$paper)
-medium_post$oil <- as.factor(medium_post$oil)
-medium_post$acrylic <- as.factor(medium_post$acrylic)
+medium_post <- medium_post[, -c(1:4)]
 
 mydata <-
   select (mydata,-c(created, signiture, medium, auction_date))
@@ -237,4 +230,4 @@ head(mydata, 10)
 str(mydata)
 summary(mydata)
 
-write.csv(mydata , file = "G:/Duke/MIDS_F20/IDS702/Final Project/final-project-solaris-2578/Data/02_CleanData/Auction_HK_2016-2020.csv", row.names = FALSE)
+write.csv(mydata , file = "G:/Duke/MIDS_F20/IDS702/Final Project/final-project-solaris-2578/Data&Model/02_CleanData/Auction_HK_2016-2020.csv", row.names = FALSE)
