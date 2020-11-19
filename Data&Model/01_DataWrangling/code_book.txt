@@ -1,0 +1,6 @@
+height, width -- cm
+sales_dollar, low_estimate, high_estimate -- dollar
+
+auction_location: The auction house is recorded as a dummy variable, 0 for Sotheby’s Hong Kong and 1 for Christie’s Hong Kong. 
+
+aunction-date: only keep start date of a period
